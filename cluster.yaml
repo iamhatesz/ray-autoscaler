@@ -226,7 +226,9 @@ file_mounts: {
 initialization_commands: []
 
 # List of shell commands to run to set up nodes.
-setup_commands: []
+setup_commands:
+    - test -e ray-autoscaler || git clone https://github.com/iamhatesz/ray-autoscaler.git
+    - cd ray-autoscaler && git fetch && git checkout `cat /tmp/master_branch_sha`
 
 # Custom commands that will be run on the head node after common setup.
 head_setup_commands: []
