@@ -229,6 +229,8 @@ initialization_commands: []
 setup_commands:
     - test -e ray-autoscaler || git clone https://github.com/iamhatesz/ray-autoscaler.git
     - cd ray-autoscaler && git fetch && git checkout `cat /tmp/master_branch_sha`
+    - cd ray-autoscaler/python/custom_envs && pip install -e .
+    - cd ray-autoscaler/python/custom_models && pip install -e .
 
 # Custom commands that will be run on the head node after common setup.
 head_setup_commands: []
