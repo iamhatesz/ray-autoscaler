@@ -20,7 +20,7 @@ if __name__ == '__main__':
         config={
             'env': 'CorridorEnv',
             'env_config': {
-                'length': tune.grid_search([5, 10, 20]),
+                'length': tune.grid_search([5, 10, 50]),
             },
 
             'model': {
